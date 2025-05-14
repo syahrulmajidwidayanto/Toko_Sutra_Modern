@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Toko Kondom Modern - Syahrul Majid Widayanto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff4e50;
+            --secondary: #f9d423;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            animation: pulse 15s infinite linear;
+        }
+        
+        @keyframes pulse {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+            position: relative;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .tagline {
+            font-weight: 300;
+            font-size: 1.2rem;
+            margin-top: 10px;
+            position: relative;
+        }
+        
+        .floating-bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: floating 15s infinite ease-in;
+        }
+        
+        .bubble:nth-child(1) {
+            width: 40px;
+            height: 40px;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .bubble:nth-child(2) {
+            width: 20px;
+            height: 20px;
+            left: 20%;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+        
+        .bubble:nth-child(3) {
+            width: 50px;
+            height: 50px;
+            left: 35%;
+            animation-delay: 4s;
+        }
+        
+        .bubble:nth-child(4) {
+            width: 30px;
+            height: 30px;
+            left: 50%;
+            animation-delay: 1s;
+            animation-duration: 18s;
+        }
+        
+        .bubble:nth-child(5) {
+            width: 25px;
+            height: 25px;
+            left: 70%;
+            animation-delay: 3s;
+        }
+        
+        .bubble:nth-child(6) {
+            width: 45px;
+            height: 45px;
+            left: 85%;
+            animation-delay: 5s;
+            animation-duration: 20s;
+        }
+        
+        @keyframes floating {
+            0% {
+                bottom: -100px;
+                transform: translateX(0) rotate(0deg);
+            }
+            50% {
+                transform: translateX(100px) rotate(180deg);
+            }
+            100% {
+                bottom: 100%;
+                transform: translateX(0) rotate(360deg);
+            }
+        }
+        
+        .produk-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 50px auto;
+            max-width: 1200px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .produk {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            width: 280px;
+            text-align: center;
+            padding: 25px;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .produk::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .produk:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .produk:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .produk img {
+            width: 100%;
+            border-radius: 15px;
+            object-fit: cover;
+            height: 200px;
+            transition: transform 0.5s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .produk:hover img {
+            transform: scale(1.05);
+        }
+        
+        .produk h3 {
+            margin: 15px 0 5px;
+            font-size: 1.3rem;
+            color: white;
+        }
+        
+        .produk p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        button {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 78, 80, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        button::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--secondary), var(--primary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(255, 78, 80, 0.6);
+        }
+        
+        button:hover::after {
+            opacity: 1;
+        }
+        
+        button span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        #keranjang {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(26, 26, 46, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            width: 300px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 100;
+            transform: translateY(0);
+            transition: transform 0.5s ease;
+        }
+        
+        #keranjang:hover {
+            transform: translateY(-5px);
+        }
+        
+        #keranjang h3 {
+            margin-top: 0;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        #keranjang ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 10px 0;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        #keranjang li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .total {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin: 15px 0;
+            color: white;
+            text-align: right;
+        }
+        
+        .total span {
+            color: var(--secondary);
+        }
+        
+        .floating-condom {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: floatCondom 10s infinite ease-in-out;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        @keyframes floatCondom {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(50px, -30px) rotate(10deg);
+            }
+            50% {
+                transform: translate(0, -50px) rotate(0deg);
+            }
+            75% {
+                transform: translate(-50px, -30px) rotate(-10deg);
+            }
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            margin-top: 50px;
+            position: relative;
+        }
+        
+        @media (max-width: 768px) {
+            .produk-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            #keranjang {
+                position: static;
+                width: auto;
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <header>
+        <h1>Toko Kondom Modern</h1>
+        <p class="tagline">Produk Berkualitas untuk Kenyamanan Anda</p>
+    </header>
+
+    <div class="floating-condom" style="top: 20%; left: 5%; background-image: url('https://i.imgur.com/7QqQj0L.jpg');"></div>
+    <div class="floating-condom" style="top: 30%; right: 10%; background-image: url('https://i.imgur.com/9Z8wZ0J.jpg'); animation-delay: 2s;"></div>
+    <div class="floating-condom" style="bottom: 20%; left: 15%; background-image: url('https://i.imgur.com/3KjQw0L.jpg'); animation-delay: 4s;"></div>
+
+  <section class="produk-container">
+    <!-- Produk 1: Durex -->
+    <div class="produk">
+        <img src="https://i.postimg.cc/rsv0PVf7/durex.jpg" alt="Durex Extra Safe">
+        <h3>Kondom Durex 3 pcs</h3>
+        <p>Rp 50.000</p>
+        <button onclick="tambahKeKeranjang('Kondom Durex 3 pcs', 50000)">Tambah</button>
+    </div>
+
+    <!-- Produk 2: Fiesta -->
+    <div class="produk">
+        <img src="https://i.postimg.cc/DfsXSsmT/fiesta.webp" alt="Fiesta Condoms">
+        <h3>Kondom Fiesta 3 pcs</h3>
+        <p>Rp 40.000</p>
+        <button onclick="tambahKeKeranjang('Kondom Fiesta 3 pcs', 40000)">Tambah</button>
+    </div>
+
+    <!-- Produk 3: Sutra -->
+    <div class="produk">
+        <img src="https://i.postimg.cc/zfVL8H44/sutra.webp" alt="Sutra Condoms">
+        <h3>Kondom Sutra 3 pcs</h3>
+        <p>Rp 30.000</p>
+        <button onclick="tambahKeKeranjang('Kondom Sutra 3 pcs', 30000)">Tambah</button>
+    </div>
+</section>
+
+    <div id="keranjang">
+        <h3>🛒 Keranjang Belanja</h3>
+        <ul id="daftarKeranjang"></ul>
+        <div class="total">Total: <span id="totalHarga">Rp 0</span></div>
+        <button onclick="checkoutWA()"><span>Checkout via WhatsApp</span></button>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Toko Kondom Modern - Syahrul Majid Widayanto</p>
+    </footer>
+
+    <script>
+        let keranjang = [];
+        let total = 0;
+
+        function tambahKeKeranjang(nama, harga) {
+            keranjang.push({nama: nama, harga: harga});
+            total += harga;
+            updateKeranjang();
+            
+            // Animasi tambahan
+            const button = event.target;
+            button.classList.add('clicked');
+            setTimeout(() => {
+                button.classList.remove('clicked');
+            }, 300);
+        }
+
+        function updateKeranjang() {
+            const daftarKeranjang = document.getElementById('daftarKeranjang');
+            daftarKeranjang.innerHTML = '';
+            keranjang.forEach(item => {
+                const li = document.createElement('li');
+                li.innerHTML = `${item.nama} <span>Rp ${item.harga.toLocaleString()}</span>`;
+                daftarKeranjang.appendChild(li);
+            });
+            document.getElementById('totalHarga').textContent = 'Rp ' + total.toLocaleString();
+            
+            // Animasi keranjang
+            const keranjangElement = document.getElementById('keranjang');
+            keranjangElement.style.transform = 'translateY(-10px)';
+            setTimeout(() => {
+                keranjangElement.style.transform = 'translateY(0)';
+            }, 300);
+        }
+
+        function checkoutWA() {
+            let pesan = '📦 *PESANAN TOKO KONDOM MODERN* 📦\n\n';
+            pesan += 'Berikut detail pesanan saya:\n\n';
+            
+            keranjang.forEach(item => {
+                pesan += `➡️ ${item.nama} - Rp ${item.harga.toLocaleString()}\n`;
+            });
+            
+            pesan += `\n💰 *Total: Rp ${total.toLocaleString()}*\n\n`;
+            pesan += 'Mohon konfirmasi ketersediaan stock dan total yang harus dibayar.\n';
+            pesan += 'Saya akan melakukan pembayaran setelah konfirmasi dari Admin.\n\n';
+            pesan += 'Terima kasih! 😊';
+            
+            const nomorWA = '6287731941403';
+            const urlWA = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+            window.open(urlWA, '_blank');
+            
+            // Animasi checkout
+            const button = event.target;
+            button.innerHTML = '<span>Mengirim...</span>';
+            setTimeout(() => {
+                button.innerHTML = '<span>Checkout via WhatsApp</span>';
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
